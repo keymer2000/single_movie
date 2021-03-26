@@ -1,4 +1,6 @@
 import React from 'react'
+import Paginacion from '../components/Paginacion'
+
 // import axios from 'axios'
 
 
@@ -79,7 +81,8 @@ class List extends React.Component{
                 }
                 
             </div>
-            </div>
+            
+        </div>
             
         )
     }
