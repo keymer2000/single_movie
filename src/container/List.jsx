@@ -1,5 +1,4 @@
 import React from 'react'
-// import Card from '../components/Card'
 // import axios from 'axios'
 
 
@@ -15,22 +14,6 @@ class List extends React.Component{
             error: ""
         }
     }
-
-    // peticionGet = () => {
-    //     axios.get(url).then(response=>{
-    //         console.log(response);
-    //         // this.setState({data: response.data})
-    //     })
-    //     .catch(error=>{
-    //         console.log(error)
-    //     });
-    // }
-
-    
-    // componentDidMount(){
-    //     this.peticionGet();
-    // }
-
 
     async componentDidMount(){
     //    const res = await fetch('./data.json')
