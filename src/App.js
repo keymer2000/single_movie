@@ -9,6 +9,11 @@ class App extends Component{
 render() {
   return (
       <div>
+        <nav className="navbar navbar-dark bg-dark border-bottom border-white">
+          <a href="/" className="navbar-brand">
+            MoviApp Black
+          </a>
+        </nav>
         <List></List>
       </div>
   )
