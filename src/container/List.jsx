@@ -1,5 +1,5 @@
 import React from 'react'
-import Paginacion from '../components/Paginacion'
+// import Paginacion from '../components/Paginacion'
 
 // import axios from 'axios'
 
