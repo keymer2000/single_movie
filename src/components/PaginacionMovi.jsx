@@ -1,31 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import './style.css'
 
-const renderData = data => {
-    return (
-        <div className="container-fluid">
-            <div className="row">
-                {
-                    data.map((movie, i) => {
-                        return (
-                            <div className="col-md-4 mb-4" key={i}>
-                                <div className="card">
-                                    <img src={movie.Poster} alt={movie.Title} className="card-img-top"/>
-                                    <div className="card-body">
-                                        <h4>{movie.Title} {movie.Year}</h4>
-                                        <p>{movie.Type}</p>
-                                    </div>
-                                </div>
-                            </div>
-                        )
-                    })
-                }
 
-            </div>
-        </div>
-
-    )
-}
 
 const url = "http://www.omdbapi.com/?i=tt3896198&apikey=e6c0030a"
 
@@ -34,13 +10,12 @@ function PaginacionMovi() {
 
     const [data, setData] = useState([]);
 
-
     const [currentPage, setcurrentPage] = useState(1);
     const [itemsPerPage, setitemsPerPage] = useState(5);
 
     //estos 3 estados definen el numero minimo y maximo de la paginacion con un limite de item
-    const [pageNumberLimit, setpageNumberLimit] = useState(5);
-    const [maxPageNumberLimit, setmaxPageNumberLimit] = useState(5);
+    const [pageNumberLimit, setpageNumberLimit] = useState(2);
+    const [maxPageNumberLimit, setmaxPageNumberLimit] = useState(2);
     const [minPageNumberLimit, setminPageNumberLimit] = useState(0);
 
 
@@ -81,8 +56,8 @@ function PaginacionMovi() {
         // fetch("https://jsonplaceholder.typicode.com/todos")
         fetch(`${url}&s=batman`)
             .then((response) => response.json())
-            // .then((json) => setData(json.Search))
-        .then((json) => console.log(json))
+            .then((json) => setData(json.Search))
+            // .then((json) => console.log(json))
     }, []);
 
     const handleNextbtn= ()=>{
@@ -115,7 +90,7 @@ function PaginacionMovi() {
     
     return (
         <>
-            <h1>hola mundo</h1>  <br />
+           <br/>
             {renderData(currentItem)} <br/>
             <ul className="pageNumbers">
                 <li>
@@ -131,6 +106,34 @@ function PaginacionMovi() {
                 </li>
             </ul>
         </>
+    )
+}
+
+//renderizacion en pantalla de la card de cada pelicula
+
+const renderData = data => {
+    return (
+        <div className="container-fluid">
+            <div className="row">
+                {
+                    data.map((movie, i) => {
+                        return (
+                            <div className="col-md-4 mb-4" key={i} >
+                                <div className="card">
+                                    <img src={movie.Poster} alt={movie.Title} className="card-img-top" />
+                                    <div className="card-body">
+                                        <h4>{movie.Title} {movie.Year}</h4>
+                                        <p>{movie.Type}</p>
+                                    </div>
+                                </div>
+                            </div>
+                        )
+                    })
+                }
+
+            </div>
+        </div>
+
     )
 }
 
