@@ -1,7 +1,8 @@
 import React, { Component } from 'react'
-import List from './container/List'
+// import List from './container/List'
 import 'bootstrap/dist/css/bootstrap.min.css'
-import PaginacionMovi from './components/PaginacionMovi'
+import MoviApp from './components/MoviApp'
+// import PaginacionMovi from './components/PaginacionMovi'
 // import axios from 'axios'
 
 
@@ -16,7 +17,8 @@ class App extends Component {
           </a>
         </nav>
         <List></List> */}
-        <PaginacionMovi></PaginacionMovi>
+        {/* <PaginacionMovi></PaginacionMovi> */}
+        <MoviApp></MoviApp>
     </div>
     )
   }
