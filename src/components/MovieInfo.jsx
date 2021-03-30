@@ -1,10 +1,13 @@
 import React from 'react'
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faArrowLeft } from "@fortawesome/free-solid-svg-icons";
+
 
 const MovieInfo = (props) =>{
     return(
         <div className="container">
             <div className="row" onClick={props.closeMovieInfo} style={{cursor:"pointer", paddingTop: 50}}>
-                <i className="fas fa-arrow-left"></i>
+                <FontAwesomeIcon icon={faArrowLeft} />
                 <span style={{marginLeft: 10}}>Go back</span>
             </div>
 
