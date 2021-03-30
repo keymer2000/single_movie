@@ -7,7 +7,6 @@ import MovieInfo from './MovieInfo'
 
 
 class MoviApp extends Component{
-
     constructor(){
         super()
         this.state={
