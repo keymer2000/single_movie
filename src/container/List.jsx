@@ -80,7 +80,7 @@ class List extends React.Component{
                     })
                 }
                 
-            </div>
+                </div>
             
         </div>
             

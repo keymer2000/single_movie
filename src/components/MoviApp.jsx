@@ -4,6 +4,7 @@ import Nav from './Nav'
 import SearchArea from './SearchArea'
 import PaginationApp from './PaginationApp'
 import MovieInfo from './MovieInfo'
+import Movie from './Movie'
 
 
 class MoviApp extends Component{
@@ -28,6 +29,7 @@ class MoviApp extends Component{
         .then(data => {
             console.log(data);
             this.setState({movies: [...data.results], totalResults: data.total_results})
+            
         })
     }
 
@@ -41,7 +43,7 @@ class MoviApp extends Component{
         fetch(`https://api.themoviedb.org/3/search/movie?api_key=${this.apiKey}&query=${this.state.SearchTerm}&page=${pageNumber}`)
         .then(data => data.json())
         .then(data => {
-            console.log(data);
+            // console.log(data);
             this.setState({movies: [...data.results], currentPage: pageNumber})
         })
     }
@@ -68,6 +70,7 @@ class MoviApp extends Component{
                 <Nav></Nav>
                 {this.state.currentMovie == null ? <div><SearchArea handleSubmit={this.handleSubmit} handleChange={this.handleChange}/><MovieList viewMovieInfo={this.viewMovieInfo} movies={this.state.movies}/></div> : <MovieInfo currentMovie={this.state.currentMovie} closeMovieInfo={this.closeMovieInfo} />}
                 {this.state.totalResults > 20 && this.state.currentMovie == null ? <PaginationApp pages={numberPage} nextPage={this.nextPage} currentPage={this.state.currentPage} /> : ''}
+                
             </div>
         )
     }

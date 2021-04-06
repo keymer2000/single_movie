@@ -2,8 +2,10 @@ import React, { Component } from 'react'
 // import List from './container/List'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import MoviApp from './components/MoviApp'
-// import PaginacionMovi from './components/PaginacionMovi'
+// import PaginacionMovi from './container/PaginacionMovi'
 // import axios from 'axios'
+import { BrowserRouter, Switch, Route } from "react-router-dom";
+
 
 
 class App extends Component {
@@ -18,7 +20,12 @@ class App extends Component {
         </nav>
         <List></List> */}
         {/* <PaginacionMovi></PaginacionMovi> */}
-        <MoviApp></MoviApp>
+        {/* <MoviApp></MoviApp> */}
+        <BrowserRouter>
+          <Switch>
+            <Route exact path="/" component={MoviApp} />
+          </Switch>
+    </BrowserRouter>
     </div>
     )
   }

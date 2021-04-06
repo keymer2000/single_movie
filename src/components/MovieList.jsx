@@ -11,7 +11,7 @@ const MovieList = (props) =>{
                             return(
                                 <Movie key={i} viewMovieInfo={props.viewMovieInfo} movieId={movie.id} image={movie.poster_path}  />
                             )
-                            })
+                        })
                     }
                 </div>
             </div>
